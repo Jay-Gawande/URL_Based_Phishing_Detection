@@ -21,5 +21,5 @@ ML model used - Random forest classifier
 ##  Dataset
 - **Dataset Used:** LegitPhish Dataset  
 - Contains labeled URLs:
-  - `0 → Legitimate`
-  - `1 → Phishing`
+  - `0 → Phishing`
+  - `1 → Legitimate`
