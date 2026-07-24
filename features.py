@@ -25,7 +25,8 @@ def extract_features(url):
     dot_count = url.count('.')
     
     # 4. https_flag
-    https_flag = 1 if parsed_url.scheme == 'https' else 0
+    https_flag = 1 if parsed_url.scheme == "https" else 0 if parsed_url.scheme == "http" else None
+
     
     # 5. url_entropy
     url_entropy = calculate_entropy(url)
@@ -57,7 +58,7 @@ def extract_features(url):
     tld_popularity = 1 if ext.suffix in common_tlds else 0
     
     # 14. suspicious_file_extension
-    suspicious_exts = ['.exe', '.php', '.js', '.zip', '.rar', '.bat']
+    suspicious_exts = ['.exe', '.php', '.js', '.zip', '.rar', '.bat', '.xyz']
     has_suspicious = 1 if any(url.endswith(ext) for ext in suspicious_exts) else 0
     
     # 15. domain_name_length
